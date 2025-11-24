@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pago - Creaciones Rosita</title>
+   <link id="elegirestilo" rel="stylesheet" href="../ESTILOS/pago.css">
+    <link rel="stylesheet" href="style.css">
+  <script src="../Scripts/validacion.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="../imagenes/logo1.jpeg" alt="Logo Creaciones Rosita" width="100" height="100">
+           
+
+        <h1>Creaciones Rosita</h1>
+    </div>
+</header>
+
+<section class="pago-box">
+    <h2>Detalles del Pago</h2>
+
+    <form id="formPago">
+        <label>Producto seleccionado:</label>
+        <input type="text" id="producto" readonly>
+
+        <label>Monto a pagar (Bs):</label>
+        <input type="number" id="monto" readonly>
+
+        <label>Nombre completo del cliente:</label>
+        <input type="text" id="cliente" required>
+
+        <label>Método de pago:</label>
+        <select id="metodo" required>
+            <option value="">Seleccione...</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="QR">QR</option>
+        </select>
+
+        <div id="qrBox" class="qrBox" style="display:none;">
+            <p>Escanee el QR para pagar:</p>
+            <img src="../IMAGENES/qr.jpeg" class="qr-img">
+        </div>
+
+        <button type="submit" class="btn">Confirmar pago</button>
+    </form>
+</section>
+
+<script src="../Scripts/pago.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chatbot Tienda - Flores Eternas</title>
+
+  <link rel="stylesheet" href="../estilos/estilo1.css">
+  <style>
+    /* Mejoras estéticas rápidas */
+    body {
+      background: #fffefc;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 16px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      border-radius: 8px 8px 0 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      background-color: #e57373;
+      color: #fff;
+      font-weight: bold;
+      font-size: 24px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .header .sub {
+      font-size: 12px;
+      color: #555;
+      margin: 2px 0 0;
+    }
+
+    .top-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 16px;
+    }
+
+    .top-controls input {
+      flex: 1;
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .top-controls .btn {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .chat-wrap {
+      margin: 0 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #Mensajes {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 8px;
+      background-color: #fafafa;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .sugerencias-panel .collapsible {
+      width: 100%;
+      text-align: left;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #f2f2f2;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .panel-content {
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 6px;
+    }
+
+    .category {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .category strong {
+      color: #333;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .quick-btn {
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quick-btn.primary {
+      background-color: #e57373;
+      color: #fff;
+      border-color: #e57373;
+    }
+
+    .quick-btn:hover {
+      opacity: 0.9;
+    }
+
+    .entry {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .entry input {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .entry button.send {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none;
+      background-color: #e57373;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .help {
+      font-size: 12px;
+      color: #555;
+      margin: 8px 16px;
+    }
+
+    .msg.user {
+      background-color: #ffdede;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      align-self: flex-end;
+      max-width: 70%;
+    }
+
+    .msg.bot {
+      background-color: #f0f0f0;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      align-self: flex-start;
+      max-width: 70%;
+    }
+  </style>
+</head>
+<body>
+
+<main class="panel" role="main" aria-label="Chatbot tienda de regalos">
+
+  <div class="header">
+    <div class="logo">FE</div>
+    <div>
+      <h1>Chatbot - Flores Eternas</h1>
+      <p class="sub">Flores artificiales, peluches y regalos para ocasiones especiales</p>
+    </div>
+  </div>
+
+  <div class="top-controls" aria-hidden="false">
+    <input id="Nombre" type="text" placeholder="Escribe tu nombre (ej: Julio)" aria-label="Nombre del usuario" />
+    <a id="catalogoBtn" class="btn ghost" href="#" title="Abrir catálogo" role="button">Catálogo</a>
+  </div>
+
+  <section class="chat-wrap" aria-live="polite">
+    <div id="Mensajes" role="log" aria-label="Mensajes del chat">
+      <div class="meta">Consejo: usa la lista de sugerencias o escribe tu mensaje. Presiona Enter para enviar.</div>
+    </div>
+
+    <div class="sugerencias-panel">
+      <button class="collapsible" id="toggleSugs" aria-expanded="false">
+        Sugerencias rápidas <small>(toca para abrir/cerrar)</small>
+        <span aria-hidden="true">▾</span>
+      </button>
+
+      <div class="panel-content" id="panelContent">
+        <div class="category" aria-hidden="true">
+          <div>
+            <strong>Flores Eternas</strong>
+            <button class="quick-btn primary small" data-msg="¿Qué son las flores eternas?">¿Qué son?</button>
+            <button class="quick-btn small" data-msg="¿De qué material están hechas?">Material</button>
+            <button class="quick-btn small" data-msg="¿Cuánto duran las flores eternas?">Duración</button>
+          </div>
+
+          <div>
+            <strong>Peluches</strong>
+            <button class="quick-btn small" data-msg="¿Qué tamaños de peluches tienen?">Tamaños</button>
+            <button class="quick-btn small" data-msg="¿Puedo personalizar un peluche?">Personalizar</button>
+          </div>
+
+          <div>
+            <strong>Regalos para pareja</strong>
+            <button class="quick-btn small" data-msg="¿Qué me recomiendan para aniversario?">Recomendaciones</button>
+            <button class="quick-btn small" data-msg="¿Puedo agregar una dedicatoria?">Agregar dedicatoria</button>
+          </div>
+
+          <div>
+            <strong>Centros de mesa</strong>
+            <button class="quick-btn small" data-msg="¿Tienen centros de mesa para graduación?">Centros graduación</button>
+            <button class="quick-btn small" data-msg="¿Se pueden personalizar los centros de mesa?">¿Personalizan?</button>
+          </div>
+
+          <div>
+            <strong>Envíos & Pagos</strong>
+            <button class="quick-btn small" data-msg="¿Hacen entregas a domicilio?">Entregas</button>
+            <button class="quick-btn small" data-msg="¿Puedo pedir para hoy?">Pedido para hoy</button>
+            <button class="quick-btn small" data-msg="¿Qué métodos de pago aceptan?">Métodos de pago</button>
+          </div>
+
+          <div style="display:flex; gap:8px; margin-top:6px;">
+            <button class="quick-btn primary" id="openCatalogFromSugs">Ver Catálogo</button>
+            <button class="quick-btn" data-msg="¿Cómo hago un pedido?">¿Cómo pedir?</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <input id="Mensaje" type="text" placeholder="Escribe un mensaje..." aria-label="Escribe tu mensaje" />
+      <button class="send" id="sendBtn">ENVIAR</button>
+    </div>
+  </section>
+
+  <div class="help">¿Necesitas más opciones? Pulsa <strong>Catálogo</strong> o usa los botones de sugerencias.</div>
+</main>
+
+<script src="../Scripts/javascript1.js" defer></script>
+</body>
+</html>
+
+

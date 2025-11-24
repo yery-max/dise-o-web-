@@ -1,0 +1,41 @@
+.pago-main{display:flex;gap:30px;flex-wrap:wrap;padding:24px}
+.carrito-resumen{flex:1;min-width:280px;background:linear-gradient(#F0E5D7,#E0D4C5);padding:18px;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,0.05)}
+.form-pago{flex:1;min-width:320px;background:linear-gradient(#F3E8DD,#F0E5D7);padding:18px;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,0.05)}
+.detalle-carrito p{margin:6px 0}
+.totalDiv{font-weight:800;margin-top:12px;color:var(--dark2)}
+label{display:block;margin-top:12px;font-weight:600}
+input,select{width:100%;padding:10px;border-radius:8px;border:1px solid var(--muted);background:#fff;margin-top:6px}
+
+/* QR box */
+.qrBox{text-align:center;margin-top:10px}
+.qr-img{width:180px;border-radius:12px}
+
+/* Comprobante (oculto visualmente, pero se usará para pdf) */
+.comprobante{
+  position:fixed;left:-9999px;top:0;width:210mm;
+}
+.comprobante-inner{
+  width:190mm;
+  height:277mm;
+  padding:18mm;
+  background-image: url('../IMAGENES/frame.jpeg'); /* marco floral - coloca la imagen aquí */
+  background-size:cover;
+  background-position:center;
+  border:1px solid var(--muted);
+  border-radius:8px;
+  color: var(--dark2);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.comp-header{display:flex;align-items:center;gap:12px}
+.comp-logo{width:60px;height:60px;border-radius:8px;object-fit:cover}
+.comp-title h1{margin:0;font-size:18px;letter-spacing:1px}
+.comp-body{background:rgba(255,255,255,0.88);padding:12px;border-radius:8px;margin-top:10px}
+.comp-body p{margin:8px 0}
+.comp-total{font-weight:800;margin-top:8px}
+.comp-qr img{width:120px;margin-top:10px}
+
+/* controles */
+.carrito-controls{display:flex;gap:10px;margin-top:12px}
+.carrito-controls .btn{padding:8px 10px}

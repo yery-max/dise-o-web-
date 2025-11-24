@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creaciones Rosita</title>
+    <link id="elegirestilo" rel="stylesheet" href="../ESTILOS/estilos2r.css">
+</head>
+<body class="theme-dia">
+
+<header class="navbar">
+    <div class="logo">
+        <img src="../imagenes/logo1.jpeg" alt="Logo Creaciones Rosita" width="100" height="100">
+        <span class="logo-text">Creaciones Rosita</span>
+    </div>
+
+    <!-- Redes flotantes -->
+<div class="contenedor-redes-flotantes">
+    <a href="https://wa.me/59170906838" class="logo-item whatsapp" target="_blank" rel="noopener noreferrer">
+        <img src="../IMAGENES/whatsapp.png" alt="WhatsApp" title="WhatsApp">
+    </a>
+    <a href="https://www.instagram.com/_creaciones_rosita/?igsh=c2l1NWI5NjJsanhy#" class="logo-item instagram" target="_blank" rel="noopener noreferrer">
+        <img src="../IMAGENES/instagram.png" alt="Instagram" title="Instagram">
+    </a>
+    <a href="https://www.tiktok.com/@creaciones_rosita_?_r=1&_t=ZM-91NdjzUhPg0" class="logo-item tiktok" target="_blank" rel="noopener noreferrer">
+        <img src="../IMAGENES/tiktok.png" alt="TikTok" title="TikTok">
+    </a>
+</div>
+
+    <nav class="menu">
+        <a href="chat.html" class="dropbtn" id="btn-login">CHATBOT</a>
+        <a href="pago/paginas/catalogo.html" class="dropbtn" id="btn-CATALOGO">CATÁLOGO</a>
+
+        <div class="dropdown">
+            <button class="dropbtn" id="language-btn">LENGUAJE</button>
+            <div class="dropdown-content language-content">
+                <a href="#" id="lang-en">English</a>
+                <a href="#" id="lang-es">Español</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn" id="theme-btn">TEMAS</button>
+            <div class="dropdown-content">
+                <a onclick="cambiarTema('dia')">DÍA</a>
+                <a onclick="cambiarTema('noche')">NOCHE</a>
+                <a onclick="cambiarTema('daltonico')">DALTONICO</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Slider -->
+<section class="container">
+    <div class="slider-wrapper">
+        <div class="slider">
+            <a href="pago/paginas/catalogo.html">
+                <img id="slide-1" src="../IMAGENES/ramos/centros de mesa/centro de mesa con goma eva.jpeg" alt="Centro de Mesa">
+            </a>
+            <a href="pago/paginas/catalogo.html">
+                <img id="slide-2" src="../imagenes/ramo de graduacion.jpeg" alt="Ramo">
+            </a>
+            <a href="pago/paginas/catalogo.html">
+                <img id="slide-3" src="../imagenes/bota dulcero navideño.jpeg" alt="Dulcero Navideño">
+            </a>
+        </div>
+
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+        </div>
+    </div>
+</section>
+
+<!-- Historia -->
+<section class="mision-section">
+    <h2 id="titulo-historia">HISTORIA</h2>
+    <p id="texto-historia">
+        Comenzamos este emprendimiento con la pasión de crear flores que nunca se marchiten. 
+        Cada pieza que creamos es única y especial, diseñada para preservar tus momentos más 
+        importantes para siempre. Trabajamos con materiales de la más alta calidad, dedicando 
+        tiempo y amor a cada detalle. Nuestras flores artesanales no solo son hermosas, sino que 
+        también cuentan una historia y transmiten emociones.
+    </p>
+</section>
+
+<!-- Visión -->
+<section class="mision-section">
+    <h2 id="titulo-vision">VISIÓN</h2>
+    <p id="texto-vision">
+        Crea momentos especiales con detalles únicos hechos con rosas eternas, destacando calidad, 
+        originalidad y amor en cada entrega.
+    </p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <section class="footer-info" align=center>
+        <p id="footer-frase">EL REGALO PERFECTO QUE DURA PARA SIEMPRE</p>
+        <p id="footer-contacto">CONTÁCTANOS</p>
+    </section>
+</footer>
+
+<script src="../Scripts/script1.js"></script>
+<script src="../Scripts/temas.js"></script>
+
+</body>
+</html>
