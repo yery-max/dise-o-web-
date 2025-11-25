@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f9ece1;
+    color: #4b2e2e;
+}
+
+header {
+    background: linear-gradient(135deg, #d39aa0, #c48a93);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.dropbtn {
+    background: #c48a80;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.logo img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.titulo-principal {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.categoria {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.categoria h2 {
+    text-align: center;
+    color: #4b2e2e;
+}
+
+.producto {
+    background: #eed6c5;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(100, 60, 60, 0.25);
+    text-align: center;
+}
+
+.producto h3 {
+    margin: 10px 0;
+}
+
+.img-producto {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    background: #f5e4d8;
+    border: solid 2px #c48a93;
+}
+
+.btn {
+    /* Color de fondo del botón inferior */
+    background-color: #8B454E; /* O un código de color similar */
+    
+    /* Color del texto */
+    color: white; 
+    
+    /* Acolchado interno para hacerlo más grande */
+    padding: 10px 20px; 
+    
+    /* Borde redondeado */
+    border-radius: 5px; 
+    
+    /* Eliminar el borde predeterminado */
+    border: none; 
+    
+    /* Cambiar el cursor al pasar el ratón */
+    cursor: pointer; 
+    
+    /* Fuente del texto (opcional, pero ayuda a la consistencia) */
+    font-size: 16px;
+    font-weight: bold;
+    
+    /* Un ligero sombreado para darle profundidad (opcional) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo al pasar el ratón */
+.btn:hover {
+    background-color: #A52A2A; /* Un color un poco más claro para el efecto hover */
+}

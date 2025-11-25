@@ -1,0 +1,65 @@
+body {
+    background: #F3E8DD;
+    margin: 0;
+    font-family: Arial;
+}
+header {
+    background: linear-gradient(135deg, #d39aa0, #c48a93);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+
+.navbar {
+   background: linear-gradient(to right, #C28893, #D9A6AE);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.logo img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.pago-box {
+    margin: 20px auto;
+    width: 90%;
+    background: #E0D4C5;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px #6F3841;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #6F3841;
+}
+
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    background: #6F3841;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.qr-img {
+    width: 200px;
+}

@@ -1,0 +1,301 @@
+/* =============================
+   RESET Y VARIABLES
+============================= */
+:root{
+  --p1: #C28893;
+  --p2: #D9A6AE;
+  --bg1: #E8D5C4;
+  --bg2: #F3E8DD;
+  --muted: #D7B7B8;
+  --accent1: #B9C7B9;
+  --accent2: #8F9E8F;
+  --dark1: #6F3841;
+  --dark2: #4D1B24;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(var(--bg1), var(--bg2));
+  color: var(--dark1);
+  line-height: 1.5;
+}
+
+/* =============================
+   HEADER
+============================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  background: linear-gradient(90deg, var(--p1), var(--p2));
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.25);
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* =============================
+   MENÚ
+============================= */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dropbtn {
+  background-color: var(--p1);
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.dropbtn:hover {
+  background-color: var(--p2);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: var(--bg2);
+  min-width: 140px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 12px;
+  color: var(--dark2);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--p2);
+  color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* =============================
+   SLIDER / CARRUSEL
+============================= */
+.slider-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  background: var(--bg2);
+}
+
+.slider {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider > a {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.slider-nav {
+  display: flex;
+  gap: 0.6rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  align-items: center;
+  pointer-events: none;
+}
+
+.slider-nav a {
+  pointer-events: auto;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.9);
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+.slider-nav a:hover,
+.slider-nav a.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* =============================
+   SECCIONES: HISTORIA / VISIÓN
+============================= */
+.mision-section {
+  padding: 40px 20px;
+  margin: 20px auto;
+  width: 85%;
+  max-width: 900px;
+  background-color: var(--bg2);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.mision-section h2 {
+  color: var(--dark1);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.mision-section p {
+  color: var(--dark2);
+  line-height: 1.6;
+}
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+  background-color: var(--muted);
+  padding: 20px 0;
+  border-top: 3px solid var(--p1);
+}
+
+.footer-info p {
+  color: var(--dark1);
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* =============================
+   REDES FLOTANTES
+============================= */
+.contenedor-redes-flotantes {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px;
+  z-index: 999; 
+  display: flex;
+  flex-direction: column-reverse; 
+  align-items: flex-end; 
+  gap: 10px;
+}
+
+.logo-item {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+  transition: transform 0.2s;
+}
+
+.logo-item:hover {
+  transform: translateY(-3px);
+}
+
+.logo-item img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain; 
+}
+
+/* Diferenciar colores de cada red */
+.whatsapp { background-color: #25D366; }
+.instagram { background-color: #E1306C; }
+.tiktok { background-color: #000; }
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 900px) {
+  .menu { 
+    flex-direction: column; 
+    gap: 8px; 
+    align-items: center;     /* <--- aquí el CORRECTO */
+    justify-content: center; /* opcional, por si quieres centrar verticalmente */
+  }
+
+  .navbar { 
+    flex-direction: column; 
+    align-items: center;     /* <--- antes tenías flex-start */
+    gap: 12px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .slider-wrapper { 
+    aspect-ratio: 4 / 3; 
+    width: 95%; 
+  }
+  .mision-section { 
+    width: 95%; 
+    padding: 25px 15px; 
+  }
+}
+

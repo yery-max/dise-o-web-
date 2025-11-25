@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    /* Fondo de la página con el rosa pastel del ejemplo */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #F3E8DD, #E0D4C5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #4D1B24;
+    }
+
+    /* Contenedor del login */
+    #login-container {
+      background-color: #F3E8DD;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      width: 350px;
+      text-align: center;
+      border: 3px solid #D7B7B8;
+    }
+
+    #login-container h2 {
+      margin-bottom: 25px;
+      color: #6F3841;
+    }
+
+    /* Inputs */
+    #login-container input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #D7B7B8;
+      border-radius: 8px;
+      font-size: 14px;
+      background-color: #F0E5D7;
+      color: #4D1B24;
+    }
+
+    /* Botón Entrar */
+    #login-container button {
+      width: 95%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #C28893;
+      color: #F3E8DD;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    #login-container button:hover {
+      background-color: #D9A6AE;
+      color: #4D1B24;
+    }
+
+    /* Mensaje de error */
+    #error {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #6F3841;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Usuario" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+      <p id="error"></p>
+    </form>
+  </div>
+
+  <script src="..\Scripts\login.js"></script>
+</body>
+</html>

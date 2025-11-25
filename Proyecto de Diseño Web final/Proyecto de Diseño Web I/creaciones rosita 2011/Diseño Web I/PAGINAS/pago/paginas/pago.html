@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pago - Creaciones Rosita</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../estilo/estilos.css">
+  <link rel="stylesheet" href="../estilo/pagos.css">
+
+  <!-- html2pdf para generar PDF (ya lo tenías) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo-box">
+    <img src="../imagen/logo.jpeg" alt="Logo" class="logo-img">
+    <div class="brand">
+      <h1>Creaciones Rosita</h1>
+      <p class="tag">El arte de regalar flores</p>
+    </div>
+  </div>
+</header>
+
+<main class="pago-main">
+  <section class="carrito-resumen">
+    <h2>Carrito</h2>
+    <div id="detalle-carrito" class="detalle-carrito"></div>
+    <div id="totalDiv" class="totalDiv"></div>
+
+    <!-- controles de eliminación y cantidad global -->
+    <div class="carrito-controls">
+      <button class="btn secondary" id="btn-eliminar-seleccionados" type="button">Eliminar seleccionados</button>
+      <button class="btn secondary" id="btn-vaciar" type="button">Vaciar carrito</button>
+    </div>
+  </section>
+
+  <section class="form-pago">
+    <h2>Información de pago</h2>
+    <form id="formPago">
+      <label for="cliente">Nombre del cliente</label>
+      <input id="cliente" type="text" placeholder="Tu nombre completo" required>
+
+      <label for="metodo">Método de pago</label>
+      <select id="metodo" required>
+        <option value="">Seleccione...</option>
+        <option value="QR">Pago con QR</option>
+        <!-- valor cambiado a EFECTIVO para coincidir con el script -->
+        <option value="EFECTIVO">Pago en efectivo</option>
+      </select>
+
+      <!-- QR (se muestra solo si se selecciona QR) -->
+      <div id="qrBox" class="qrBox oculto" style="display:none;">
+        <p>Escanee este QR para pagar:</p>
+        <img src="../imagen/qr.jpeg" alt="QR" class="qr-img">
+      </div>
+
+      <!-- Fecha de entrega (se muestra solo si se selecciona EFECTIVO) -->
+      <div id="fechaBox" class="fechaBox oculto" style="display:none; margin-top:10px;">
+        <label for="fechaEntrega">Fecha de entrega (mínimo 3 de anticipación)</label>
+        <input id="fechaEntrega" name="fechaEntrega" type="date" />
+      </div>
+
+      <!-- Mapa del punto de entrega (se añade el iframe desde JS) -->
+      <div id="mapBox" class="mapBox oculto" style="display:none; margin-top:10px;">
+        <label>Punto de entrega</label>
+        <div id="mapContainer" style="width:100%;height:300px;border-radius:8px;overflow:hidden;"></div>
+      </div>
+
+      <button type="submit" class="btn confirm-btn">Confirmar pago y generar comprobante</button>
+    </form>
+  </section>
+</main>
+
+<!-- COMPROBANTE (oculto en la UI, se usa para generar el PDF) -->
+<aside id="comprobante" class="comprobante oculto" style="display:none;">
+  <div class="comprobante-inner">
+    <header class="comp-header">
+      <img src="../imagen/logo.jpeg" class="comp-logo" alt="logo">
+      <div class="comp-title">
+        <h1>COMPROBAR PAGO</h1>
+        <p>Creaciones Rosita</p>
+      </div>
+    </header>
+
+    <section class="comp-body">
+      <div id="comp-lista"></div>
+      <div id="comp-total" class="comp-total"></div>
+      <div id="comp-metodo" class="comp-metodo"></div>
+      <div id="comp-fecha" class="comp-fecha"></div>
+      <!-- Aqui se añadirá la referencia del punto de entrega -->
+      <div id="comp-lugar" class="comp-lugar"></div>
+      <div id="comp-qr" class="comp-qr"></div>
+    </section>
+
+    <footer class="comp-footer">
+      <p>Gracias por su compra 💐</p>
+      <p>Creaciones Rosita - El arte de regalar flores</p>
+    </footer>
+  </div>
+</aside>
+
+<!-- Tu script principal con la lógica del carrito, método, fecha mínima y mapa -->
+<script src="../java/validacion.js" defer></script>
+</body>
+</html>
